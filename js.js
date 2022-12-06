@@ -88,7 +88,7 @@ function insertData() {
 // GET DATA
 function findData() {
   event.preventDefault();
-  if (number.value.length == 0) {
+  if (findDat.value == "") {
     alert("Data required!");
     return;
   } else {
@@ -97,24 +97,41 @@ function findData() {
     get(child(dbref, "Products/" + number.value))
       .then((snapshot) => {
         if (snapshot.exists()) {
-          //   let listItem = document.createElement("li");
-          //   listItem.classList.add(
-          //     "list-group-item",
-          //     "list-group-item-secondary"
-          //   );
-          //   listItem.textContent = "Product Name: " + snapshot.val().Name;
-          //   findDat.appendChild(listItem);
-          //   let listItemSecond = document.createElement("li");
-          //   listItemSecond.classList.add(
-          //     "list-group-item",
-          //     "list-group-item-light"
-          //   );
-          //   listItemSecond.textContent =
-          //     "Product Quantity: " + snapshot.val().Quantity;
-          //   findDat.appendChild(listItemSecond);
-          let table = document.createElement("table");
-          let tr = document.createElement("tr");
-          
+          //   console.log(snapshot.val().Name);
+          //   let tr1 = document.createElement("tr");
+          //   let tr2 = document.createElement("tr");
+          //   findDat.appendChild(tr1);
+          //   findDat.appendChild(tr2);
+          //   let arr = [
+          //     "Name",
+          //     "ID",
+          //     "Quantity",
+          //     "Price",
+          //     "Description",
+          //     "Image",
+          //     snapshot.val().Name,
+          //     snapshot.val().ID,
+          //     snapshot.val().Quantity,
+          //     snapshot.val().Price,
+          //     snapshot.val().Description,
+          //     snapshot.val().Image,
+          //   ];
+          //   for (let key in arr) {
+          //     let td = document.createElement("td");
+          //     td.innerText = arr[key];
+          //     if (key <= 5) {
+          //       tr1.appendChild(td);
+          //     } else {
+          //       tr2.appendChild(td);
+          //       if (key == 11) {
+          //         td.innerText = "";
+          //         let img = document.createElement("img");
+          //         img.src = arr[key];
+          //         img.style.cssText = "width: 50px; height: auto;";
+          //         td.appendChild(img);
+          //       }
+          //     }
+          //   }
         } else {
           alert("No data found");
         }
@@ -166,7 +183,22 @@ function removeDate() {
   }
 }
 
-
 // Task
 // Create a table which contains returned data
-// Use insert set and get 
+// Use insert set and get
+
+//   let listItem = document.createElement("li");
+//   listItem.classList.add(
+//     "list-group-item",
+//     "list-group-item-secondary"
+//   );
+//   listItem.textContent = "Product Name: " + snapshot.val().Name;
+//   findDat.appendChild(listItem);
+//   let listItemSecond = document.createElement("li");
+//   listItemSecond.classList.add(
+//     "list-group-item",
+//     "list-group-item-light"
+//   );
+//   listItemSecond.textContent =
+//     "Product Quantity: " + snapshot.val().Quantity;
+//   findDat.appendChild(listItemSecond);
